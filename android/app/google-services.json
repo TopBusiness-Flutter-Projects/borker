@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1006878976898",
+    "project_id": "broker-db44e",
+    "storage_bucket": "broker-db44e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006878976898:android:67b46169839770fd68fd9b",
+        "android_client_info": {
+          "package_name": "com.broker.topbusiness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6n-nzexV-rKp3e0dydujNRXguAqZ4e3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
