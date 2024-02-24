@@ -16,7 +16,7 @@ class AppSettings {
   static const String shareAppText = "Share this App";
 
   ///API Setting
-  static const String hostUrl = "https://Broker.wrteam.me/";
+  static const String hostUrl = "https://broker.topbusiness.io/";
 
   static const int apiDataLoadLimit = 20;
   static const int maxCategoryShowLengthInHomeScreen = 5;
@@ -39,9 +39,9 @@ it will call API in background without showing the process and when data availab
   //TODO: Deprecated [We do not recommend using this as this will stop running in few time]
   /// You will find this prefix from firebase console in dynamic link section
   static const String deepLinkPrefix =
-      "https://demo.page.link"; //demo.page.link
+      "https://topbusiness.page.link"; //demo.page.link
   //set anything you want
-  static const String deepLinkName = "demo.com"; //deeplink demo.com
+  static const String deepLinkName = "topbusiness.com"; //deeplink demo.com
 //!TODO: End deprecated
 
   static const MapType googleMapType =

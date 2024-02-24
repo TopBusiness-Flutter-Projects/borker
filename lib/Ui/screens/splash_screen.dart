@@ -182,44 +182,47 @@ class SplashScreenState extends State<SplashScreen>
   }
 
   void navigateToScreen() {
-    if (context
-            .read<FetchSystemSettingsCubit>()
-            .getSetting(SystemSetting.maintenanceMode) ==
-        "1") {
-      Future.delayed(Duration.zero, () {
-        Navigator.of(context).pushReplacementNamed(
-          Routes.maintenanceMode,
-        );
-      });
-    } else if (authenticationState == AuthenticationState.authenticated) {
-      Future.delayed(Duration.zero, () {
-        Navigator.of(context)
-            .pushReplacementNamed(Routes.main, arguments: {'from': "main"});
-      });
-    } else if (authenticationState == AuthenticationState.unAuthenticated) {
-      if (Hive.box(HiveKeys.userDetailsBox).get("isGuest") == true) {
-        Future.delayed(Duration.zero, () {
-          Navigator.of(context)
-              .pushReplacementNamed(Routes.main, arguments: {"from": "splash"});
-        });
-      } else {
-        Future.delayed(Duration.zero, () {
-          Navigator.of(context).pushReplacementNamed(Routes.login);
-        });
-      }
-    } else if (authenticationState == AuthenticationState.firstTime) {
-      Future.delayed(Duration.zero, () {
-        Navigator.of(context).pushReplacementNamed(Routes.onboarding);
-      });
-    }
+    Navigator.of(context).pushReplacementNamed(
+      Routes.maintenanceMode,
+    );
+    // if (context
+    //         .read<FetchSystemSettingsCubit>()
+    //         .getSetting(SystemSetting.maintenanceMode) ==
+    //     "1") {
+    //   Future.delayed(Duration.zero, () {
+    //     Navigator.of(context).pushReplacementNamed(
+    //       Routes.maintenanceMode,
+    //     );
+    //   });
+    // } else if (authenticationState == AuthenticationState.authenticated) {
+    //   Future.delayed(Duration.zero, () {
+    //     Navigator.of(context)
+    //         .pushReplacementNamed(Routes.main, arguments: {'from': "main"});
+    //   });
+    // } else if (authenticationState == AuthenticationState.unAuthenticated) {
+    //   if (Hive.box(HiveKeys.userDetailsBox).get("isGuest") == true) {
+    //     Future.delayed(Duration.zero, () {
+    //       Navigator.of(context)
+    //           .pushReplacementNamed(Routes.main, arguments: {"from": "splash"});
+    //     });
+    //   } else {
+    //     Future.delayed(Duration.zero, () {
+    //       Navigator.of(context).pushReplacementNamed(Routes.login);
+    //     });
+    //   }
+    // } else if (authenticationState == AuthenticationState.firstTime) {
+    //   Future.delayed(Duration.zero, () {
+    //     Navigator.of(context).pushReplacementNamed(Routes.onboarding);
+    //   });
+    // }
   }
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.manual,
-      overlays: SystemUiOverlay.values,
-    );
+    // SystemChrome.setEnabledSystemUIMode(
+    //   SystemUiMode.manual,
+    //   overlays: SystemUiOverlay.values,
+    // );
 
     navigateCheck();
 
