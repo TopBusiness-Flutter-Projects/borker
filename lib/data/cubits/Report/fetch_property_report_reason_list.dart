@@ -48,7 +48,7 @@ class FetchPropertyReportReasonsListCubit
     extends Cubit<FetchPropertyReportReasonsListState> with HydratedMixin {
   FetchPropertyReportReasonsListCubit()
       : super(FetchPropertyReportReasonsInitial());
-  ReportPropertyRepository _repository = ReportPropertyRepository();
+  final ReportPropertyRepository _repository = ReportPropertyRepository();
   void fetch({bool? forceRefresh}) async {
     try {
       if (forceRefresh != true) {

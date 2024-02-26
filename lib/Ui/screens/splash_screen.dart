@@ -51,8 +51,8 @@ class SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late AuthenticationState authenticationState;
 
-  bool isTimerCompleted = false;
-  bool isSettingsLoaded = false;
+  bool isTimerCompleted = true;
+  bool isSettingsLoaded = true;
   bool isLanguageLoaded = false;
 
   @override
@@ -182,47 +182,44 @@ class SplashScreenState extends State<SplashScreen>
   }
 
   void navigateToScreen() {
-    Navigator.of(context).pushReplacementNamed(
-      Routes.maintenanceMode,
-    );
-    // if (context
-    //         .read<FetchSystemSettingsCubit>()
-    //         .getSetting(SystemSetting.maintenanceMode) ==
-    //     "1") {
-    //   Future.delayed(Duration.zero, () {
-    //     Navigator.of(context).pushReplacementNamed(
-    //       Routes.maintenanceMode,
-    //     );
-    //   });
-    // } else if (authenticationState == AuthenticationState.authenticated) {
-    //   Future.delayed(Duration.zero, () {
-    //     Navigator.of(context)
-    //         .pushReplacementNamed(Routes.main, arguments: {'from': "main"});
-    //   });
-    // } else if (authenticationState == AuthenticationState.unAuthenticated) {
-    //   if (Hive.box(HiveKeys.userDetailsBox).get("isGuest") == true) {
-    //     Future.delayed(Duration.zero, () {
-    //       Navigator.of(context)
-    //           .pushReplacementNamed(Routes.main, arguments: {"from": "splash"});
-    //     });
-    //   } else {
-    //     Future.delayed(Duration.zero, () {
-    //       Navigator.of(context).pushReplacementNamed(Routes.login);
-    //     });
-    //   }
-    // } else if (authenticationState == AuthenticationState.firstTime) {
-    //   Future.delayed(Duration.zero, () {
-    //     Navigator.of(context).pushReplacementNamed(Routes.onboarding);
-    //   });
-    // }
+    if (context
+            .read<FetchSystemSettingsCubit>()
+            .getSetting(SystemSetting.maintenanceMode) ==
+        "1") {
+      Future.delayed(Duration.zero, () {
+        Navigator.of(context).pushReplacementNamed(
+          Routes.maintenanceMode,
+        );
+      });
+    } else if (authenticationState == AuthenticationState.authenticated) {
+      Future.delayed(Duration.zero, () {
+        Navigator.of(context)
+            .pushReplacementNamed(Routes.main, arguments: {'from': "main"});
+      });
+    } else if (authenticationState == AuthenticationState.unAuthenticated) {
+      if (Hive.box(HiveKeys.userDetailsBox).get("isGuest") == true) {
+        Future.delayed(Duration.zero, () {
+          Navigator.of(context)
+              .pushReplacementNamed(Routes.main, arguments: {"from": "splash"});
+        });
+      } else {
+        Future.delayed(Duration.zero, () {
+          Navigator.of(context).pushReplacementNamed(Routes.login);
+        });
+      }
+    } else if (authenticationState == AuthenticationState.firstTime) {
+      Future.delayed(Duration.zero, () {
+        Navigator.of(context).pushReplacementNamed(Routes.onboarding);
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setEnabledSystemUIMode(
-    //   SystemUiMode.manual,
-    //   overlays: SystemUiOverlay.values,
-    // );
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: SystemUiOverlay.values,
+    );
 
     navigateCheck();
 
@@ -230,6 +227,7 @@ class SplashScreenState extends State<SplashScreen>
       listener: (context, state) {},
       child: BlocListener<FetchSystemSettingsCubit, FetchSystemSettingsState>(
         listener: (context, state) {
+          print('stateis :$state : ${state is FetchSystemSettingsSuccess}');
           if (state is FetchSystemSettingsFailure) {}
           if (state is FetchSystemSettingsSuccess) {
             var setting = context

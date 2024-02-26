@@ -679,12 +679,13 @@ class AbstractPickFileButton extends AbstractField {
                 child: Row(
                   children: [
                     Icon(
-                      IconData(
-                        d.iconSetMap[".${pickedFilePath.split(".").last}"]!
-                            .codePoint,
-                        fontFamily: 'Seti',
-                        fontPackage: 'file_icon',
-                      ),
+                      Icons.link,
+                      // IconData(
+                      // d.iconSetMap[".${pickedFilePath.split(".").last}"]!
+                      //     .codePoint,
+                      //   fontFamily: 'Seti',
+                      //   fontPackage: 'file_icon',
+                      // ),
                       color: context.color.tertiaryColor,
                       size: 35,
                     ),

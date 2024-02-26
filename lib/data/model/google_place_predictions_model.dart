@@ -35,6 +35,8 @@ class Predictions {
     this.reference,
   });
 
+
+/
   Predictions.fromJson(Map<String, dynamic> json) {
     description = json['description'];
 
