@@ -44,13 +44,13 @@
 
   <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="KEY HERE" />
+            android:value="AIzaSyCZjDPvxg9h3IUSfVPzIwnKli5Y17p-v9g"/>
 
        <!--THIS ID IS REQUIRED MAKE SURE TO FILL REAL APP ID OTHERWISE APP WILL CRASH-->
        <meta-data
            android:name="com.google.android.gms.ads.APPLICATION_ID"
-           android:value="ID HERE"/>
-
+           android:value="ca-app-pub-8816736465609632~1030540248"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -67,24 +67,24 @@
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
-              />
+              />                               
 <!--            <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />-->
 <!--            <intent-filter android:autoVerify="true">-->
 <!--                <action android:name="android.intent.action.VIEW" />-->
 <!--                <category android:name="android.intent.category.DEFAULT" />-->
 <!--                <category android:name="android.intent.category.BROWSABLE" />-->
-<!--                <data android:scheme="http"  />-->
+<!--                <data android:scheme="http"  />-->                           
 <!--                <data android:scheme="https" android:host=""/>-->
-<!--            </intent-filter>-->
+<!--            </intent-filter>-->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />                                                                             
+                <category android:name="android.intent.category.DEFAULT" />                                                 
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with YOUR_SCHEME://YOUR_HOST -->
                 <data
                     android:scheme="https"
-                    android:host="LINK HERE" />
+                    android:host="broker.topbusiness.io/" />
             </intent-filter>
 
             <!-- App Links -->
@@ -95,7 +95,7 @@
                 <!-- Accepts URIs that begin with https://YOUR_HOST -->
                 <data
                     android:scheme="https"
-                    android:host="LINK HERE" />
+                    android:host="https://broker.topbusiness.io/" />
             </intent-filter>
 
 

@@ -29,7 +29,7 @@ class EnquirySetFailure extends EnquiryState {
 class EnquiryCubit extends Cubit<EnquiryState> {
   EnquiryCubit() : super(EnquiryInitial());
 
-void setEnquiry(BuildContext context,
+  void setEnquiry(BuildContext context,
       {String? actionType, String? propertyId, String? status}) {
     emit(EnquirySetProgress());
     setEnquiryFromDb(context, actionType!, propertyId!, status!)

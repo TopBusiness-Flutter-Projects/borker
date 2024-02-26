@@ -104,7 +104,7 @@ class HiveUtils {
   }
 
   static dynamic getCityName() {
-    return Hive.box(HiveKeys.userDetailsBox).get(HiveKeys.city);
+    return Hive.box(HiveKeys.userDetailsBox).get(HiveKeys.city) ?? '';
   }
 
   static dynamic getCityPlaceId() {
@@ -112,11 +112,11 @@ class HiveUtils {
   }
 
   static dynamic getStateName() {
-    return Hive.box(HiveKeys.userDetailsBox).get(HiveKeys.stateKey);
+    return Hive.box(HiveKeys.userDetailsBox).get(HiveKeys.stateKey) ?? '';
   }
 
   static dynamic getCountryName() {
-    return Hive.box(HiveKeys.userDetailsBox).get(HiveKeys.countryKey);
+    return Hive.box(HiveKeys.userDetailsBox).get(HiveKeys.countryKey) ?? '';
   }
 
   static void setJWT(String token) async {

@@ -101,12 +101,7 @@ class LocationWidget extends StatelessWidget {
                     SizedBox(
                       width: 150,
                       child: Text(
-                        (HiveUtils.getCityName() +
-                                "," +
-                                HiveUtils.getStateName() +
-                                "," +
-                                HiveUtils.getCountryName()) +
-                            "",
+                        "${HiveUtils.getCityName() + (HiveUtils.getStateName() == '' ? '' : ",") + HiveUtils.getStateName() + (HiveUtils.getCountryName() == '' ? '' : ",") + HiveUtils.getCountryName() ?? ''}",
                         maxLines: 1,
                         softWrap: true,
                         overflow: TextOverflow.ellipsis,
