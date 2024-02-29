@@ -57,21 +57,21 @@ class PropertyCardBig extends StatelessWidget {
               color: context.color.borderColor,
             ),
           ),
-          height: 272,
-          width: 250,
+          // height: 200,
+          width: MediaQuery.of(context).size.width / 1.8,
           child: Stack(
             children: [
               Column(
                 children: [
                   SizedBox(
-                    height: 147,
+                    height: MediaQuery.of(context).size.width / 3,
                     child: Stack(
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: UiUtils.getImage(
                             property.titleImage!,
-                            height: 147,
+                            height: MediaQuery.of(context).size.width / 3,
                             width: double.infinity,
                             fit: BoxFit.cover,
                             blurHash: property.titleimagehash,
@@ -115,94 +115,90 @@ class PropertyCardBig extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, bottom: 5, left: 12, right: 12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
+                  Flexible(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          children: [
+                            UiUtils.imageType(property.category!.image!,
+                                width: 18,
+                                height: 18,
+                                color: Constant.adaptThemeColorSvg
+                                    ? context.color.tertiaryColor
+                                    : null),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(property.category?.category ?? "")
+                                .size(
+                                  context.font.small,
+                                )
+                                .bold(
+                                  weight: FontWeight.w400,
+                                )
+                                .color(
+                                  context.color.textLightColor,
+                                )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 7,
+                        ),
+                        if (property.properyType.toString().toLowerCase() ==
+                            "rent") ...[
+                          Text(rentPrice)
+                              .size(
+                                context.font.large,
+                              )
+                              .color(
+                                context.color.tertiaryColor,
+                              )
+                              .bold(
+                                weight: FontWeight.w700,
+                              ),
+                        ] else ...[
+                          Text(property.price!
+                                  .priceFormate(
+                                    disabled:
+                                        Constant.isNumberWithSuffix == false,
+                                  )
+                                  .toString()
+                                  .formatAmount(prefix: true))
+                              .size(context.font.large)
+                              .color(context.color.tertiaryColor)
+                              .bold(
+                                weight: FontWeight.w700,
+                              ),
+                        ],
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          property.title ?? "",
+                        )
+                            .setMaxLines(lines: 1)
+                            .size(context.font.large)
+                            .color(context.color.textColorDark),
+                        if (property.city != "") ...[
+                          const Spacer(),
                           Row(
+                            mainAxisSize: MainAxisSize.min,
                             children: [
-                              UiUtils.imageType(property.category!.image!,
-                                  width: 18,
-                                  height: 18,
-                                  color: Constant.adaptThemeColorSvg
-                                      ? context.color.tertiaryColor
-                                      : null),
+                              UiUtils.getSvg(AppIcons.location,
+                                  color: context.color.textLightColor),
                               const SizedBox(
                                 width: 5,
                               ),
-                              Text(property.category?.category ?? "")
-                                  .size(
-                                    context.font.small,
-                                  )
-                                  .bold(
-                                    weight: FontWeight.w400,
-                                  )
-                                  .color(
-                                    context.color.textLightColor,
-                                  )
+                              Expanded(
+                                child: Text(property.city!)
+                                    .color(context.color.textLightColor)
+                                    .setMaxLines(lines: 1),
+                              )
                             ],
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          if (property.properyType.toString().toLowerCase() ==
-                              "rent") ...[
-                            Text(rentPrice)
-                                .size(
-                                  context.font.large,
-                                )
-                                .color(
-                                  context.color.tertiaryColor,
-                                )
-                                .bold(
-                                  weight: FontWeight.w700,
-                                ),
-                          ] else ...[
-                            Text(property.price!
-                                    .priceFormate(
-                                      disabled:
-                                          Constant.isNumberWithSuffix == false,
-                                    )
-                                    .toString()
-                                    .formatAmount(prefix: true))
-                                .size(context.font.large)
-                                .color(context.color.tertiaryColor)
-                                .bold(
-                                  weight: FontWeight.w700,
-                                ),
-                          ],
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            property.title ?? "",
                           )
-                              .setMaxLines(lines: 1)
-                              .size(context.font.large)
-                              .color(context.color.textColorDark),
-                          if (property.city != "") ...[
-                            const Spacer(),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                UiUtils.getSvg(AppIcons.location,
-                                    color: context.color.textLightColor),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Expanded(
-                                  child: Text(property.city!)
-                                      .color(context.color.textLightColor)
-                                      .setMaxLines(lines: 1),
-                                )
-                              ],
-                            )
-                          ]
-                        ],
-                      ),
+                        ]
+                      ],
                     ),
                   )
                 ],
