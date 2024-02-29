@@ -13,10 +13,10 @@ class GooglePlaceRepository {
     String text,
   ) async {
     try {
-      ///
+      ///z
       ///************************ */
       Map<String, dynamic> queryParameters = {
-        Api.placeApiKey: Constant.googlePlaceAPIkey,
+        Api.placeApiKey: 'AIzaSyCZjDPvxg9h3IUSfVPzIwnKli5Y17p-v9g',
         Api.input: text,
         Api.type: "(cities)"
       };

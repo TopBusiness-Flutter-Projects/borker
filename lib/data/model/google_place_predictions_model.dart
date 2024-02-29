@@ -36,7 +36,6 @@ class Predictions {
   });
 
 
-/
   Predictions.fromJson(Map<String, dynamic> json) {
     description = json['description'];
 
