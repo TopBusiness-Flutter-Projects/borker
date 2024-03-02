@@ -1226,6 +1226,7 @@ class PersonalizedPropertyWidget extends StatelessWidget {
                 },
                 title: "personalizedFeed".translate(context),
               ),
+              
               SizedBox(
                 height: MediaQuery.of(context).size.width / 1.5,
                 child: ListView.builder(
