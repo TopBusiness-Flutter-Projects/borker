@@ -32,7 +32,7 @@ it will call API in background without showing the process and when data availab
   static const DeepLinkType deepLinkingType = DeepLinkType.native;
 
   ///Native deep link
-  static const String shareNavigationWebUrl = "ebrokerweb.wrteam.me";
+  static const String shareNavigationWebUrl = "broker.topbusiness.io";
 
   ///
 

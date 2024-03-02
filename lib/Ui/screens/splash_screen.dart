@@ -256,27 +256,30 @@ class SplashScreenState extends State<SplashScreen>
           ),
           child: Scaffold(
             backgroundColor: context.color.tertiaryColor,
-            body: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                      width: 150,
-                      height: 150,
-                      child: LoadAppSettings().svg(
-                        appSettings.splashLogo!,
-                        // color: context.color.secondaryColor,
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    key: const ValueKey("companylogo"),
-                    child: UiUtils.getSvg(AppIcons.companyLogo),
-                  ),
-                )
-              ],
+            body: Center(
+              child: Align(
+                alignment: Alignment.center,
+                child: SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: LoadAppSettings().svg(
+                      appSettings.splashLogo!,
+                      // color: context.color.secondaryColor,
+                    )),
+              ),
+            ),
+            bottomSheet: Container(
+              color: context.color.tertiaryColor,
+              height: MediaQuery.of(context).size.width / 4,
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                key: const ValueKey("companylogo"),
+                child: UiUtils.getSvg(AppIcons.companyLogo,
+                    width: MediaQuery.of(context).size.width / 2.5
+                    //
+                    ),
+              ),
             ),
           ),
         ),
