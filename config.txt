@@ -1,4 +1,5 @@
 
 APP_NAME=Broker
 
-APP_PACKAGE=com.ebroker.wrteam
+APP_PACKAGE=com.broker.topbusiness
+

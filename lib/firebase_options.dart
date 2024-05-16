@@ -70,6 +70,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1006878976898',
     projectId: 'broker-db44e',
     storageBucket: 'broker-db44e.appspot.com',
-    iosBundleId: 'com.ebroker.wrteam',
+    iosBundleId: 'com.broker.topbusiness',
   );
 }
