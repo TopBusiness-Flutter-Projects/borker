@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyB6n-nzexV-rKp3e0dydujNRXguAqZ4e3Y',
-    appId: '1:1006878976898:android:67b46169839770fd68fd9b',
+    appId: '1:1006878976898:android:aa39a52630e0b72268fd9b',
     messagingSenderId: '1006878976898',
     projectId: 'broker-db44e',
     storageBucket: 'broker-db44e.appspot.com',
@@ -66,10 +66,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBj3NmK2evBU7vA5OH125HJ_xbhqCLNdTQ',
-    appId: '1:1006878976898:ios:51763ed82648f57468fd9b',
+    appId: '1:1006878976898:ios:c70ecaedeb80f1fb68fd9b',
     messagingSenderId: '1006878976898',
     projectId: 'broker-db44e',
     storageBucket: 'broker-db44e.appspot.com',
-    iosBundleId: 'com.broker.topbusiness',
+    iosBundleId: 'com.topbusiness.broker',
   );
+
 }

@@ -1,5 +1,5 @@
 
 APP_NAME=Broker
 
-APP_PACKAGE=com.broker.topbusiness
+APP_PACKAGE=com.topbusiness.broker
 

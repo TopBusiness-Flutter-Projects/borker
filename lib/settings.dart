@@ -8,7 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 class AppSettings {
   ///Basic Settings
   static const String applicationName = 'Broker';
-  static const String androidPackageName = 'com.broker.topbusiness';
+  static const String androidPackageName = 'com.topbusiness.broker';
   static const String iOSAppId = '12345678';
   static const String playstoreURLAndroid =
       "https://play.google.com/store/apps/details?id=$androidPackageName";

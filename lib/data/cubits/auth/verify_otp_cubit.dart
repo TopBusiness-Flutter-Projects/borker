@@ -33,10 +33,8 @@ class VerifyOtpCubit extends Cubit<VerifyOtpState> {
       {required String verificationId, required String otp}) async {
     try {
       emit(VerifyOtpInProgress());
-
       UserCredential userCredential = await _authRepository.verifyOTP(
           otpVerificationId: verificationId, otp: otp);
-
       emit(VerifyOtpSuccess(credential: userCredential));
     } on FirebaseAuthException catch (e) {
       emit(VerifyOtpFailure(ErrorFilter.check(e.code).error));
