@@ -783,14 +783,14 @@ class LoginScreenState extends State<LoginScreen> {
           borderRadius: BorderRadius.circular(11),
           backgroundColor: context.color.backgroundColor,
           inputDecoration: InputDecoration(
-              prefixIcon: Icon(Icons.search),
+              prefixIcon: const Icon(Icons.search),
               iconColor: context.color.tertiaryColor,
               prefixIconColor: context.color.tertiaryColor,
               focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: context.color.tertiaryColor)),
               floatingLabelStyle: TextStyle(color: context.color.tertiaryColor),
               labelText: "Search",
-              border: OutlineInputBorder())),
+              border: const OutlineInputBorder())),
       onSelect: (Country value) {
         flagEmoji = value.flagEmoji;
         countryCode = value.phoneCode;
