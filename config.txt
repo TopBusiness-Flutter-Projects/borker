@@ -1,5 +1,5 @@
 
-APP_NAME=Broker
+APP_NAME=Mnazil
 
 APP_PACKAGE=com.topbusiness.broker
 
